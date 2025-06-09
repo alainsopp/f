@@ -1,22 +1,21 @@
 anychart.onDocumentReady(function () {
     // add data
     var data = [
-      {from: 'First Class', to: 'Child', value: 6},
-      {from: 'Second Class', to: 'Child', value: 24},
-      {from: 'Third Class', to: 'Child', value: 79},
-      {from: 'Crew', to: 'Child', value: 0},
-      {from: 'First Class', to: 'Adult', value: 319},
-      {from: 'Second Class', to: 'Adult', value: 261},
-      {from: 'Third Class', to: 'Adult', value: 627},
-      {from: 'Crew', to: 'Adult', value: 50},
-      {from: 'Child', to: 'Female', value: 45},
-      {from: 'Child', to: 'Male', value: 64},
-      {from: 'Adult', to: 'Female', value: 425},
-      {from: 'Adult', to: 'Male', value: 1667},
-      {from: 'Female', to: 'Survived', value: 344},
-      {from: 'Female', to: 'Perished', value: 126},
-      {from: 'Male', to: 'Survived', value: 367},
-      {from: 'Male', to: 'Perished', value: 1364}
+
+      {from: 'Wages', to: 'Budget', value: 190},
+      {from: 'Reimboursments', to: 'Budget', value: 15},
+      {from: 'Money transfer inflow', to: 'Budget', value: 15},
+      {from: 'Budget', to: 'Food & restaurants', value: 6},      
+      {from: 'Budget', to: 'Purchases', value: 2},
+      {from: 'Budget', to: 'Hobbies', value: 7},
+      {from: 'Budget', to: 'Housing and charges', value: 0},
+      {from: 'Budget', to: 'Health', value: 31},
+      {from: 'Budget', to: 'Donation', value: 26},
+      {from: 'Budget', to: 'Taxes & fees', value: 62},
+      {from: 'Budget', to: 'Transportation', value: 5},
+      {from: 'Budget', to: 'Travel', value: 4},
+      {from: 'Budget', to: 'Savings & investments', value: 6},
+      {from: 'Budget', to: 'Money transfer outflow', value: 42}      
     ];
 
     // create a sankey diagram instance
@@ -44,11 +43,11 @@ anychart.onDocumentReady(function () {
 
     // customize the nodes:
     // set the width
-    chart.nodeWidth('40%');
+    chart.nodeWidth('30%');
     // set the padding
     chart.nodePadding(30);
     // customize the labels
-    chart.node().normal().labels().fontSize(14);
+    chart.node().normal().labels().fontSize(9);
     chart.node().labels().useHtml(true);
     chart
       .node()
@@ -67,17 +66,13 @@ anychart.onDocumentReady(function () {
           return this.sourceColor + ' ' + 0.8;
         }
       }
-    });
+    });    
 
-    // add a title and customize it
-    chart
-      .title()
-      .enabled(true)
-      .useHtml(true)
-      .text(
-        '<span style = "color: #2b2b2b; font-size:20px;">Titanic Survivors</span>' +
-        '<br/><span style="color:#00bfa5; font-size: 16px;">(by gender, age, ticket class)</span>'
-      );
+    var background = chart.background();
+        background.fill({
+        // set colors position
+        keys: ["#000"]
+    });
 
     // set the chart container id
     chart.container('sankey-chart');
