@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Fiducialy</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style/style.css">
+  <title>Financialy</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.anychart.com/releases/v8/js/anychart-core.min.js"></script>
+  <script src="https://cdn.anychart.com/releases/v8/js/anychart-sankey.min.js"></script>
+  <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js"></script>
+  <script src="script/script.js"></script>  
+  <link rel="stylesheet" href="style/style.css">
+</head>
 <body>
   <div class="container">
     <div class="item item1">
@@ -21,7 +26,8 @@
     </div>
     <div class="item item2">
       <div class="body-container body1">1</div>
-      <div class="body-container body2">2</div>
+      <div class="body-container body2">
+        <div id="sankey-chart"></div></div>
       <div class="body-container body3">3</div>
     </div>   
   </div>
