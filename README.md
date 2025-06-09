@@ -1,2 +1,2 @@
-# f
-Locally runnable personal budget and financial web application
+# Financialy
+Locally runnable personal budget tracking and financial web application
