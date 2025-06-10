@@ -48,8 +48,27 @@
 }
 
 .body2 {
+  border:solid 1px #e193f9;
   flex:1;
 }
+.period {
+  font-size:11px;
+  display:flex;
+  width:25%;
+  flex: 0 0 auto;
+  border:solid 1px #e193f9;
+  justify-content:space-between;
+}
+
+.period-item {
+  border-radius:15px;
+  border:solid 1px greenyellow;
+}
+
+.period-item:hover {
+  background-color:red;
+}
+
 html, body {
   color:white;
   margin:0;

@@ -1,10 +1,7 @@
 anychart.onDocumentReady(function () {
-    // add data
     var data = [
-
       {from: 'Wages', to: 'Budget', value: 190},
-      {from: 'Reimboursments', to: 'Budget', value: 15},
-      {from: 'Money transfer inflow', to: 'Budget', value: 15},
+      {from: 'Reimboursments', to: 'Budget', value: 15},      
       {from: 'Budget', to: 'Food & restaurants', value: 6},      
       {from: 'Budget', to: 'Purchases', value: 2},
       {from: 'Budget', to: 'Hobbies', value: 7},
@@ -14,8 +11,7 @@ anychart.onDocumentReady(function () {
       {from: 'Budget', to: 'Taxes & fees', value: 62},
       {from: 'Budget', to: 'Transportation', value: 5},
       {from: 'Budget', to: 'Travel', value: 4},
-      {from: 'Budget', to: 'Savings & investments', value: 6},
-      {from: 'Budget', to: 'Money transfer outflow', value: 42}      
+      {from: 'Budget', to: 'Savings & investments', value: 6}      
     ];
 
     // create a sankey diagram instance
