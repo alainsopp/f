@@ -53,8 +53,7 @@
 }
 .period {
   font-size:11px;
-  display:flex;
-  width:25%;
+  display:flex;  
   flex: 0 0 auto;
   border:solid 1px #e193f9;
   justify-content:space-between;
@@ -63,6 +62,7 @@
 .period-item {
   border-radius:15px;
   border:solid 1px greenyellow;
+  padding:5px;  
 }
 
 .period-item:hover {
