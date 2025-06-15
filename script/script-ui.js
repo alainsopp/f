@@ -43,13 +43,19 @@ for (var i=1;i<ops.length;i++) {
 
 window.addEventListener('load', 
   function () {
-    period_buttons = document.getElementsByClassName('period-item')
-    for (var i=0; i < period_buttons.length; i++){
-      period_buttons[i].addEventListener("click", 
-        function(){ 
-          this.style.backgroundColor = this.style.backgroundColor === "yellow" ? "green" : "yellow"
-        }
-      )
-    } 
-  }
+    
+    // period button
+    period_buttons = document
+      .getElementsByClassName('period-item')
+    for (var i=0; i < period_buttons.length; i++) {
+        period_buttons[i]
+          .addEventListener("click", 
+          function(){ 
+            this.style.backgroundColor = this
+              .style
+              .backgroundColor === "yellow" ? "green" : "yellow"
+          }
+        )
+    }     
+  }    
 )

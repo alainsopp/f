@@ -1,70 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Financialy</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">  
-  <script src="https://cdn.anychart.com/releases/v8/js/anychart-core.min.js"></script>
-  <script src="https://cdn.anychart.com/releases/v8/js/anychart-sankey.min.js"></script>
-  <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js"></script>
-  <script src="../private/y2018.js"></script>
-  <script src="../private/y2019.js"></script>
-  <script src="../private/y2020.js"></script>
-  <script src="../private/y2021.js"></script>
-  <script src="../private/y2022.js"></script>
-  <script src="../private/y2023.js"></script>
-  <!-- <script src="../private/y2024.js"></script>
-  <script src="../private/y2025.js"></script> -->
-  <script src="script/script.js"></script>  
-  <script src="script/script-ui.js"></script>
-  
-  <link rel="stylesheet" href="style/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sankey Diagram with D3.js</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/d3-sankey@0.12.3"></script>
+    <style>
+        svg {
+            width: 800px;
+            height: 500px;
+        }
+        .node rect {
+            fill-opacity: 0.8;
+            stroke: #333;
+        }
+        .link {
+            fill: none;
+            stroke-opacity: 0.5;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <div class="item item1">      
-        <div class="logo-container">
-          <img class="logo" src="img/financialy-logo.png">
-          <span style="font-size:22px;text-align:center; color:goldenrod">financialy</span>
-        </div>      
-      <div class="left-menu">
-        <ul>
-          <li><a href="#">Synthèse</a></li>
-          <li><a href="#">Patrimoine</a></li>
-          <li><a href="#">Analyse</a></li>
-          <li><a href="#">Budget</a></li>
-          <li><a href="#">Investir</a></li>
-          <li><a href="#">Outils</a></li>          
-        </ul>
-      </div>
-    </div>
-    <div class="item item2">
-      <div class="body-container body1">1</div>
-      <div class="body-container body2">
-        <div id="sankey-chart"></div>
-      </div>
-      <div class="period">        
-        <div class="period-item">MTD</div>
-        <div class="period-item">1M</div>        
-        <div class="period-item">YTD</div>
-        <div class="period-item">1Y</div>
-        <div class="period-item">ALL</div>
-        <div class="dropdown-menu">Custom range</div>        
-          <div class="period-item">JAN</div>
-          <div class="period-item">FEV</div>        
-          <div class="period-item">MAR</div>
-          <div class="period-item">AVR</div>
-          <div class="period-item">MAI</div>
-          <div class="period-item">JUN</div>
-          <div class="period-item">JUL</div>
-          <div class="period-item">AUG</div>
-          <div class="period-item">SEP</div>
-          <div class="period-item">OCT</div>
-          <div class="period-item">NOV</div>
-          <div class="period-item">DEC</div>        
-      </div>      
-      <div class="body-container body3">3</div>
-    </div>   
-  </div>
+    <svg></svg>
+    <script>
+        // Set up the SVG canvas
+        const width = 800, height = 500;
+        const svg = d3.select("svg").attr("width", width).attr("height", height);
+
+        // Create the Sankey layout
+        const sankey = d3.sankey()
+            .size([width, height])
+            .nodeWidth(20)
+            .nodePadding(10);
+
+        // Define data (nodes and links)
+        const data = {
+            nodes: [
+                { name: "Source A" }, { name: "Source B" }, { name: "Middle" }, { name: "Target X" }, { name: "Target Y" }
+            ],
+            links: [
+                { source: 0, target: 2, value: 5 },
+                { source: 1, target: 2, value: 8 },
+                { source: 2, target: 3, value: 6 },
+                { source: 2, target: 4, value: 7 }
+            ]
+        };
+
+        // Process data with Sankey layout
+        const sankeyData = sankey(data);
+
+        // Draw the links
+        const link = svg.append("g").selectAll(".link")
+            .data(sankeyData.links)
+            .enter().append("path")
+            .attr("class", "link")
+            .attr("d", d3.sankeyLinkHorizontal())
+            .attr("stroke-width", d => d.width)
+            .attr("stroke", "#aaa");
+
+        // Draw the nodes
+        const node = svg.append("g").selectAll(".node")
+            .data(sankeyData.nodes)
+            .enter().append("g")
+            .attr("class", "node")
+            .attr("transform", d => `translate(${d.x0},${d.y0})`);
+
+        node.append("rect")
+            .attr("width", d => d.x1 - d.x0)
+            .attr("height", d => d.y1 - d.y0)
+            .attr("fill", (d, i) => d3.schemeCategory10[i % 10]);
+
+        node.append("text")
+            .attr("x", d => d.x0 < width / 2 ? d.x1 + 5 : d.x0 - 5) // Position right or left
+            .attr("y", d => (d.y1 + d.y0) / 2) // Center vertically
+            .attr("dy", "0.35em")
+            .attr("text-anchor", d => d.x0 < width / 2 ? "start" : "end") // Align text properly
+            .style("fill", "black") // Text color
+            .style("font-size", "12px")
+            .style("font-weight", "bold")
+            .text(d => d.name);
+              
+    </script>
 </body>
 </html>
