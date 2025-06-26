@@ -1,6 +1,5 @@
 ![image info](img/main.png)
 
-# Financialy
 ## A locally runnable personal budget tracking and financial web application
 
 This application is aimed at two types of profiles.  
