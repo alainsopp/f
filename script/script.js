@@ -51,11 +51,15 @@ anychart.onDocumentReady(function () {
       '#46afaa',
       '#5a5050'
     ]);
-        
-    
-    chart.nodePadding(30);    
+
+    // customize the nodes:
+    // set the width
+    chart.nodeWidth('30%');
+    // set the padding
+    chart.nodePadding(30);
+    // customize the labels
     chart.node().normal().labels().fontSize(9);
-    chart.node().labels().useHtml(true);    
+    chart.node().labels().useHtml(true);
     chart
       .node()
       .labels()
