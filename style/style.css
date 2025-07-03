@@ -30,6 +30,7 @@
   border:solid 1px green;
   width:90%;
   border-radius:10px;
+  padding-left: 5px;
 }
 
 .left-menu-item:hover {  
