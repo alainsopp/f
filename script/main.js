@@ -11,25 +11,27 @@ var category_map = {
   'Impôts, taxes & frais'       : 6,
   'Transports'                  : 7,
   'Voyages'                     : 8,
-  'Epargne & placements'        : 9  
+  'Epargne & placements'        : 9,
+  'Note de frais'               : 10,
 }
 
 // Martix of month (Y axis) by Categories (X axis)
 var ops_cube = [
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0],
 ]
 
+// Fills in matrix with actual data
 // Adds up expenses by category for each month
 for (var i=1;i<ops.length;i++) {
   op = ops[i].split(";")
@@ -41,6 +43,7 @@ for (var i=1;i<ops.length;i++) {
   }  
 }
 
+// Adds event listener on buttons
 window.addEventListener('load', 
   function () {
     
