@@ -1,5 +1,6 @@
 
-var category_map = {
+var CFG_CURRENT_MONTH = new Date().getMonth()
+var CFG_CATEGORY_MAP = {
   'Alimentation & restaurants'  : 0,
   'Achats & shopping'           : 1,
   'Loisirs'                     : 2,
@@ -14,7 +15,7 @@ var category_map = {
 }
 
 // Martix of month (Y axis) by Categories (X axis)
-var ops_cube = [
+var CFG_OPERATION_CUBE = [
     [0,0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0,0],

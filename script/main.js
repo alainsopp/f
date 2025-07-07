@@ -1,36 +1,6 @@
 
 var ops = operations.split("\n")
 
-var category_map = {
-  'Alimentation & restaurants'  : 0,
-  'Achats & shopping'           : 1,
-  'Loisirs'                     : 2,
-  'Logement & charges'          : 3,
-  'Sante'                       : 4,
-  'Don'                         : 5,
-  'Impôts, taxes & frais'       : 6,
-  'Transports'                  : 7,
-  'Voyages'                     : 8,
-  'Epargne & placements'        : 9,
-  'Note de frais'               : 10,
-}
-
-// Martix of month (Y axis) by Categories (X axis)
-var ops_cube = [
-    [0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0],
-]
-
 // Fills in matrix with actual data
 // Adds up expenses by category for each month
 for (var i=1;i<ops.length;i++) {
@@ -39,7 +9,7 @@ for (var i=1;i<ops.length;i++) {
   categ = op[1]
   amount = op[4]  
   if(op[4] != '') {    
-    ops_cube[month][category_map[categ]]+= Math.round(amount)
+    CFG_OPERATION_CUBE[month][CFG_CATEGORY_MAP[categ]]+= Math.round(amount)
   }  
 }
 
@@ -57,6 +27,18 @@ window.addEventListener('load',
             this.style.backgroundColor = this
               .style
               .backgroundColor === "yellow" ? "green" : "yellow"
+          }
+        )
+    }     
+  }    
+)
+
+window.addEventListener('load', 
+  function () {
+    period_buttons = document.getElementsByClassName('month-year')
+    for (let i=0; i < period_buttons.length; i++) {
+        period_buttons[i].addEventListener("click", function () { 
+            plotSankey(i)
           }
         )
     }     

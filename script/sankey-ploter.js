@@ -1,19 +1,19 @@
-function plotSankey () {
+function plotSankey (month) {
   
   anychart.onDocumentReady(function () {
   
     var data = [
-      {from: 'Budget', to: "Alimentation & restaurants",  weight: ops_cube[5][0], custom_field: "info 1"},
-      {from: 'Budget', to: "Achats & shopping", weight: 1990000, custom_field: "info 2"},
-      {from: 'Budget', to: "Loisirs",   weight: 1180000, custom_field: "info 3"},
-      {from: 'Budget', to: "Logement & charges",   weight:  990000, custom_field: "info 4"},
-      {from: 'Budget', to: "Sante",   weight: 1250000, custom_field: "info 5"},
-      {from: 'Budget', to: "Don",  weight:  950000, custom_field: "info 6"},
-      {from: 'Budget', to: "Impôts, taxes & frais", weight: 2020000, custom_field: "info 7"},
-      {from: 'Budget', to: "Transports",   weight: 1110000, custom_field: "info 8"},
-      {from: 'Budget', to: "Voyages",   weight: 1100000, custom_field: "info 9"},
-      {from: 'Budget', to: "Epargne & placements",   weight: 1050000, custom_field: "info 10"},
-      {from: 'Budget', to: "Note de frais",   weight: 1050000, custom_field: "info 11"}    
+      {from: 'Budget', to: "Alimentation & restaurants",  weight: CFG_OPERATION_CUBE[month][0], custom_field: "info 1"},
+      {from: 'Budget', to: "Achats & shopping", weight: CFG_OPERATION_CUBE[month][1], custom_field: "info 2"},
+      {from: 'Budget', to: "Loisirs",   weight: CFG_OPERATION_CUBE[month][2], custom_field: "info 3"},
+      {from: 'Budget', to: "Logement & charges",   weight:  CFG_OPERATION_CUBE[month][3], custom_field: "info 4"},
+      {from: 'Budget', to: "Sante",   weight: CFG_OPERATION_CUBE[month][4], custom_field: "info 5"},
+      {from: 'Budget', to: "Don",  weight:  CFG_OPERATION_CUBE[month][5], custom_field: "info 6"},
+      {from: 'Budget', to: "Impôts, taxes & frais", weight: CFG_OPERATION_CUBE[month][6], custom_field: "info 7"},
+      {from: 'Budget', to: "Transports",   weight: CFG_OPERATION_CUBE[month][7], custom_field: "info 8"},
+      {from: 'Budget', to: "Voyages",   weight: CFG_OPERATION_CUBE[month][8], custom_field: "info 9"},
+      {from: 'Budget', to: "Epargne & placements",   weight: CFG_OPERATION_CUBE[month][9], custom_field: "info 10"},
+      {from: 'Budget', to: "Note de frais",   weight: CFG_OPERATION_CUBE[month][10], custom_field: "info 11"}    
     ];
 
     var chart = anychart.sankey(data);
@@ -65,4 +65,4 @@ function plotSankey () {
   })
 }
 
-plotSankey()
+plotSankey(CFG_CURRENT_MONTH)
