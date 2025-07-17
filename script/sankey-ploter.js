@@ -21,16 +21,15 @@ function plotSankey (month) {
     chart.node().labels().useHtml(true);
     chart.node().labels().format(function() {
       return "<span style='font-weight:bold'>" + this.name +
-             "</span><br>" + Math.round(this.value/100000)/10 + " mln";
+             "</span><br>" + Math.round(this.value);
     });
     
     chart.flow().labels().format(function() {
-      return Math.round(this.value/100000)/10 + " mln";
+      return Math.round(this.value);
     });
 
     chart.node().tooltip().titleFormat(function() {
-      return this.name + " (" + Math.round(this.value/100000)/10 +
-             " mln)";
+      return this.name + " (" + Math.round(this.value);
     });
     
     chart.node().tooltip().format(function() {

@@ -1,5 +1,5 @@
 
-var CFG_CURRENT_MONTH = new Date().getMonth()
+var CFG_CURRENT_MONTH = 0
 var CFG_CATEGORY_MAP = {
   'Alimentation & restaurants'  : 0,
   'Achats & shopping'           : 1,
