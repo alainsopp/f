@@ -4,23 +4,20 @@
   <title>Financialy</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">  
-  <script src="https://cdn.anychart.com/releases/v8/js/anychart-core.min.js"></script>
-  <script src="https://cdn.anychart.com/releases/v8/js/anychart-sankey.min.js"></script>
-  <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js"></script>  
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-  <!-- <script src="../private/y2018.js"></script>
-  <script src="../private/y2019.js"></script>
-  <script src="../private/y2020.js"></script>
-  <script src="../private/y2021.js"></script>
-  <script src="../private/y2022.js"></script>
-  <script src="../private/y2023.js"></script>
-  <script src="../private/y2024.js"></script> -->
-  <script src="../private/y2025.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-sankey@0.4.0/dist/chartjs-chart-sankey.min.js"></script>
+  <script src="../private/2018.js"></script>
+  <script src="../private/2019.js"></script>
+  <script src="../private/2020.js"></script>
+  <script src="../private/2021.js"></script>
+  <script src="../private/2022.js"></script>
+  <script src="../private/2023.js"></script>
+  <script src="../private/2024.js"></script>
+  <script src="../private/2025.js"></script>
+  <script src="script/helpers.js"></script>
   <script src="script/config.js"></script>  
   <script src="script/main.js"></script>    
-  <script src="script/ploter.js"></script>
-  
+  <script src="script/ploter.js" defer></script>  
   <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
@@ -42,7 +39,7 @@
     xmlns="http://www.w3.org/2000/svg">
     <path d="M21 21H7.8C6.11984 21 5.27976 21 4.63803 20.673C4.07354 20.3854 3.6146 19.9265 3.32698 19.362C3 18.7202 3 17.8802 3 16.2V3M6 15L10 11L14 15L20 9M20 9V13M20 9H16" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>Patrimoine</div>
-          <div class="left-menu-item"><svg fill="currentColor" width="24Apx" height="24px" viewBox="0 0 24 24"
+          <div class="left-menu-item"><svg fill="currentColor" width="24px" height="24px" viewBox="0 0 24 24"
     xmlns="http://www.w3.org/2000/svg">
     <path d="M4.626 8.878a7.937 7.937 0 0 1 1.71-2.541 7.92 7.92 0 0 1 2.542-1.71 8.12 8.12 0 0 1 6.13-.041A2.49 2.49 0 0 0 17.5 7C18.886 7 20 5.886 20 4.5S18.886 2 17.5 2c-.689 0-1.312.276-1.763.725-2.431-.973-5.223-.958-7.635.059-1.19.5-2.26 1.22-3.18 2.139A9.98 9.98 0 0 0 2 12h2c0-1.086.211-2.136.626-3.122zm14.747 6.244c-.401.952-.977 1.808-1.71 2.541s-1.589 1.309-2.542 1.71a8.12 8.12 0 0 1-6.13.041A2.488 2.488 0 0 0 6.5 17C5.114 17 4 18.114 4 19.5S5.114 22 6.5 22c.689 0 1.312-.276 1.763-.725A9.973 9.973 0 0 0 12 22a9.983 9.983 0 0 0 9.217-6.102A9.992 9.992 0 0 0 22 12h-2a7.993 7.993 0 0 1-.627 3.122z"/>
     <path d="M12 7.462c-2.502 0-4.538 2.036-4.538 4.538S9.498 16.538 12 16.538c2.502 0 4.538-2.036 4.538-4.538S14.502 7.462 12 7.462z"/>
@@ -91,9 +88,12 @@
     <div class="item item2">
       <div class="body-container body1">1</div>
       <div class="body-container body2">
-        <div id="sankey-chart"></div>
-        <div id="linear-chart">
-          <canvas id="myChart"></canvas>
+        <div id="sankey-chart">
+        sankey
+          <canvas id="sankeyChart"></canvas> <!-- sankey chart -->
+        </div>
+        <div id="linear-chart">          
+          <canvas id="lineChart" width="800" height="400"></canvas>
         </div>
       </div>
       <div class="period">        
