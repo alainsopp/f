@@ -1,6 +1,8 @@
 
-var CFG_CURRENT_YEAR = 2025
+var CFG_CURRENT_YEAR = 2023
 var CFG_CURRENT_MONTH = 1
+var PATRIMONY_CHART = ''
+var EXPENSES_CHART = ''
 var CFG_CATEGORY_MAP = {
   'Alimentation & restaurants': 0,
   'Achats & shopping': 1,

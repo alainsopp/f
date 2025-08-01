@@ -31,7 +31,7 @@ function getAssets(year) {
     }
     return assets
 }
-
+// Return formated datadet for chart.js line chart generator
 function buildLinearData (cube) {    
     var init = 0;
     data = [0,0,0,0,0,0,0,0,0,0,0,0]
@@ -40,4 +40,31 @@ function buildLinearData (cube) {
             (acc, cur) => acc + cur, init,);
     }
     return data
+}
+
+// Return formated datadet for chart.js sankey chart generator
+function buildSankeyData(cube,month) {
+    var data = [
+      { from: 'Incomes',to: 'Budget', flow : 3010},
+      { from: 'Budget', to: 'Alimentation & restaurants', flow: cube[month][0]},
+      { from: 'Budget', to: 'Achats & shopping', flow: cube[month][1]},
+      { from: 'Budget', to: 'Loisirs',  flow: cube[month][2]}, 
+      { from: 'Budget', to: 'Logement & charges', flow: cube[month][3]}, 
+      { from: 'Budget', to: 'Sante', flow: cube[month][4]}, 
+      { from: 'Budget', to: 'Don', flow: cube[month][5]}, 
+      { from: 'Budget', to: 'Impôts, taxes & frais', flow: cube[month][6]},
+      { from: 'Budget', to: 'Transports', flow: cube[month][7]},
+      { from: 'Budget', to: 'Voyages', flow: cube[month][8]},
+      { from: 'Budget', to: 'Epargne & placements', flow: cube[month][9]},
+      { from: 'Budget', to: 'Note de frais', flow: cube[month][10] }
+    ];
+    
+    var labels = {}
+    data.forEach(d =>
+      labels[d.from] = d.from +" "+ d.flow      
+    )
+    data.forEach(d =>
+      labels[d.to] = d.to +" "+ d.flow
+    ) 
+    return {data,labels}
 }
