@@ -19,7 +19,15 @@ var CFG_CATEGORY_MAP = {
 
 var CFG_ASSET_CATEGORY_MAP = {  
   'Cryptos': 0,
-  'Actions & Fonds': 0  
+  'Actions & Fonds': 1 
+}
+
+var CFG_INCOME_CATEGORY_MAP = {
+  'Salaire':0,
+  'Remboursement':1,
+  'Titres restaurant':2,
+  'Don':3,
+  'Virement':4
 }
 
 // Martix of month (Y axis) by Categories (X axis)
@@ -38,7 +46,7 @@ var CFG_OPERATION_CUBE = [
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ]
 
-// Matrix of month(Y axis) by asset categories (X axis)
+// Matrix of month (Y axis) by asset categories (X axis)
 var CFG_ASSETS_CUBE = [
   [0, 0],
   [0, 0],
@@ -53,3 +61,6 @@ var CFG_ASSETS_CUBE = [
   [0, 0],
   [0, 0]
 ]
+
+// Table of incomes per month
+var CFG_INCOMES_PER_MONTH = [0,0,0,0,0,0,0,0,0,0,0,0]

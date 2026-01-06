@@ -10,6 +10,7 @@ function getOperations(year) {
         case 2023 : operations = OPERATIONS23; break;
         case 2024 : operations = OPERATIONS24; break;
         case 2025 : operations = OPERATIONS25; break;
+        case 2026 : operations = OPERATIONS26; break;
         default: console.log("Error: no data for this year.");operations=[]
     }
     return operations
@@ -27,6 +28,7 @@ function getAssets(year) {
         case 2023 : assets = ASSETS23; break;
         case 2024 : assets = ASSETS24; break;
         case 2025 : assets = ASSETS25; break;
+        case 2026 : assets = ASSETS25; break;
         default: onsole.log("Error: no data for this year.");assets = []
     }
     return assets
@@ -35,7 +37,7 @@ function getAssets(year) {
 function buildLinearData (cube) {    
     var init = 0;
     data = [0,0,0,0,0,0,0,0,0,0,0,0]
-    for (i=0;i<cube.length;i++) {
+    for ( i = 0; i < cube.length; i++ ) {
     data[i] = cube[i].reduce(
             (acc, cur) => acc + cur, init,);
     }
@@ -43,9 +45,9 @@ function buildLinearData (cube) {
 }
 
 // Return formated datadet for chart.js sankey chart generator
-function buildSankeyData(cube,month) {
+function buildSankeyData(cube,incomes,month) {
     var data = [
-      { from: 'Incomes',to: 'Budget', flow : 3010},
+      { from: 'Incomes',to: 'Budget', flow : incomes},
       { from: 'Budget', to: 'Alimentation & restaurants', flow: cube[month][0]},
       { from: 'Budget', to: 'Achats & shopping', flow: cube[month][1]},
       { from: 'Budget', to: 'Loisirs',  flow: cube[month][2]}, 
@@ -61,10 +63,10 @@ function buildSankeyData(cube,month) {
     
     var labels = {}
     data.forEach(d =>
-      labels[d.from] = d.from +" "+ d.flow      
+      labels[d.from] = d.from +": "+ d.flow +" €" 
     )
     data.forEach(d =>
-      labels[d.to] = d.to +" "+ d.flow
+      labels[d.to] = d.to +": "+ d.flow +" €" 
     ) 
     return {data,labels}
 }
