@@ -1,0 +1,65 @@
+html,
+body {
+  color: var(--text1);
+  background-color: var(--bg1);
+  transition: background 0.3s, color 0.3s;}
+
+.left-menu-item {
+  color: var(--menu-item);}
+
+.left-menu-item:hover {
+  color: var(--hover1);
+  background-color: var(--bg2);}
+
+.left-menu-item-selected {
+  color: var(--hover1);
+  background-color:var(--bg2);}
+
+#chart-title, #sankey-chart, #linear-chart, #allocation-chart, #lineChart, #pieChart, .uploader {
+  background-color: var(--bg3);}
+
+.chart-info-date {
+  color:var(--info1);}
+
+.chart-info-perf-raw {
+  color:rgb(100, 203, 100);}
+
+.chart-info-perf-perc{
+  color:rgb(7, 108, 7);
+  background-color: darkgrey;}
+
+.period-item:hover {
+  background-color: var(--period1);}
+
+.period-item-selected {
+  background-color: var(--period1);}
+
+.dropdown-items-header {
+  color:var(--text1);}
+
+.dropdown-items-header:hover {
+  color: var(--bg1);}
+
+.chart-title-opt1 {
+  border:solid #666 1px;}
+
+.dropdown {
+  color: var(--bg1);}
+
+.dropdown-content>ul>li:hover {
+    background-color: var(--bg4);
+    color:var(--text1);}
+
+.dropdown-content>ul>li {
+  background-color: var(--period1);
+  color: var(--bg1);}
+
+.dropdown-content {
+  background-color: var(--period1);  
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);}
+
+.uploader-center {
+  border:dashed 1px var(--text1);}
+
+.uploader-center:hover {
+  background-color:var(--bg5);}

@@ -1,5 +1,24 @@
 
 function ready(fn) {
+<<<<<<< HEAD
+  if (document.readyState !== "loading") { fn(); } 
+  else { document.addEventListener("DOMContentLoaded", fn)}}
+
+ready(function () {    
+  document.getElementById("left-menu").innerHTML = window.leftMenu  
+  document.getElementById("app-logo").innerHTML = window.customImage.appLogo
+  document.getElementById("themer").innerHTML = window.customImage.theme  
+  let cd = document.getElementsByClassName("chevron-down")  
+  for( var i = 0; i < cd.length; i++ ) { cd[i].innerHTML = window.customImage.chevron_d }
+  document.getElementById("currentMonth").innerHTML = CFG_MONTH_LIST_LONG[CFG_CURRENT_MONTH]
+  document.getElementById("data-years").innerHTML = window.yearsDropdown  
+  addAllEventListener()
+  initData ()      
+  //plotLinear('rgb(20, 97, 127)')
+  //plotDoughnut()
+  document.getElementById('linear-chart').style.display="none"  
+  document.getElementById('allocation-chart').style.display="none" })
+=======
   if (document.readyState !== "loading") {
     fn();
   } else {
@@ -82,3 +101,4 @@ ready(function () {
   document.getElementById('linear-chart').style.display="none"  
   document.getElementById('allocation-chart').style.display="none"
 })
+>>>>>>> c99c11a94ac632767a4796129a76b348ff3998dc

@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
   <title>Financialy</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-sankey@0.4.0/dist/chartjs-chart-sankey.min.js"></script>
+  <link rel="stylesheet" href="style/themes.css">
+  <link rel="stylesheet" href="style/style.css"> 
+  <script src="js/chart.js"></script>
+  <script src="js/chartjs-chart-sankey.min.js"></script>
   <script src="js/svg.js"></script>
   <script src="js/config.js"></script>
   <script src="js/module.js"></script>
@@ -23,11 +26,18 @@
   <script src="js/helpers.js"></script>  
   <script src="js/ploter.js"></script>
   <script src="js/main.js"></script>
-  <link rel="stylesheet" href="style/style-light.css">
+  <script src="js/theme-engine.js"></script>  
   <link rel="stylesheet" href="style/style-main.css">
+
 </head>
 <body>
   <div class="container">
+    <div class="item item1">
+      <div class="logo-container">
+        <span class="logo">
+          <span id="app-logo"></span>
+        </span>
+        <span style="font-size:22px;text-align:center; color:#14617F">financialy</span>
     <div class="item item1">
       <div class="logo-container">
         <span class="logo">
@@ -38,17 +48,21 @@
 
       <div id="left-menu"></div>
       
+
+      <div id="left-menu"></div>
+      
     </div>
     <div class="item item2">      
-      <div class="body-container body1"></div>
+      <div class="body-container body1"> <div id="themer" onclick="CFG_THEME=(1+CFG_THEME)%2;applyTheme(CFG_THEME)"></div></div>
       <div class="body-container body2">
+        <div id="empty-page" class="uploader" style="height:700px;width:100%;"></div>
         <div id="sankey-chart">
           <div class="chart-header">
             <div class="chart-title">Flux de trésorie</div>
             <div class="chart-title-options">
               <div class="chart-title-opt1">11 Catégories <div class="chevron-down"></div></div> 
               <div class="period">                
-                 <div class="period-item dropdown">Janv.
+                 <div class="period-item dropdown"><span class="dropdown-items-header" id="currentMonth"></span>
                   <div class="dropdown-content">
                     <ul>
                       <li class="month-year">Janvier</li>
@@ -67,8 +81,7 @@
                   </div>
                 </div>
                 
-                <div id="data-years" class="period-item dropdown"></div>            
-              
+                <div id="data-years" class="period-item dropdown"></div>
               </div>             
             </div>                        
           </div> 
@@ -93,14 +106,26 @@
             <div class="chart-info-perf-raw">753.74</div>
             <div class="chart-info-perf-perc">+13.88 %</div>
           </div>
+          <div class="chart-header">
+            <div class="chart-title">Patrimoine financier <div class="chevron-down"></div></div>
+            <div class="chart-title-options">
+              <div class="chart-title-opt1">3 Catégories <div class="chevron-down"></div></div>
+              <div class="chart-title-opt1">Evolution</div>
+              <div class="chart-title-opt1">Performance (%)</div>
+            </div>            
+          </div>          
+          <div class="chart-info-date">30/10/2025</div>
+          <div class="chart-info-amount">10 584.89</div>
+          <div class="chart-info-perf">
+            <div class="chart-info-perf-raw">753.74</div>
+            <div class="chart-info-perf-perc">+13.88 %</div>
+          </div>
           <canvas id="lineChart"></canvas>
-          <div class="period">
-            <div class="period-item">1J</div>
-            <div class="period-item">7J</div>
+          <div class="period">            
             <div class="period-item">1M</div>
             <div class="period-item">1A</div>
             <div class="period-item">YTD</div>
-            <div class="period-item">Tout</div>
+            <div class="period-item period-item-selected">Tout</div>
           </div>
         </div>
         <div id="allocation-chart">
@@ -112,6 +137,5 @@
       </div>
     </div>      
   </div>  
-</bo  dy>
-
+</body>
 </html>

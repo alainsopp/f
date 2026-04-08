@@ -7,16 +7,29 @@ function plotSankey(month) {
     type: 'sankey',
     data: {
       datasets: [{
+<<<<<<< HEAD
+        label: 'Cash flow',
+        color:'white',
+=======
         label: 'Energy Flow',
+>>>>>>> c99c11a94ac632767a4796129a76b348ff3998dc
         data: output.data,
         colorFrom: 'blue',
         colorTo: 'lightblue',
         borderWidth: 1,
+<<<<<<< HEAD
+        labels: output.labels               
+      }]
+    },
+    options: {
+      responsive: true     
+=======
         labels: output.labels        
       }]
     },
     options: {
       responsive: false      
+>>>>>>> c99c11a94ac632767a4796129a76b348ff3998dc
     }
   });   
 };
@@ -24,12 +37,27 @@ function plotSankey(month) {
 function plotLinear(lineColor) {
   var ctx2 = document.getElementById('lineChart').getContext('2d');
   var data = buildLinearData(CFG_ASSETS_CUBE)
+<<<<<<< HEAD
+  const nbYears = data.length % 12
+  var labels = CFG_MONTH_LIST_SHORT
+  for ( var i = 0; i < nbYears; i++ ) { // Reapeats month on x abscisse as many time as number of year
+    yearMonths = CFG_MONTH_LIST_SHORT.map(item => item + " " + i);
+    labels = [...labels, ...yearMonths]
+  }
+  PATRIMONY_CHART = new Chart(ctx2, {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: 'Patrimony evolution',
+=======
   PATRIMONY_CHART = new Chart(ctx2, {
     type: 'line',
     data: {
       labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
       datasets: [{
         label: 'Sales',
+>>>>>>> c99c11a94ac632767a4796129a76b348ff3998dc
         data: data,
         borderColor: lineColor,
         borderWidth: 2,

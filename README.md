@@ -1,12 +1,12 @@
 <img src="img/main.png" alt="image info" width="100%"/>
 
-## <span style="color:#9C8A25;">A Locally Runnable Personal Budget Tracking & Financial Web Application</span>
+## <span style="color:#FFF;">A Locally Runnable Personal Budget Tracking & Financial Web Application</span>
 
 This application is designed for two main types of users, each with distinct needs but a shared goal: gaining full control over their finances.
 
 ---
 
-## <span style="color:#9C8A25;">For Individuals</span>
+## <span style="color:#FFF;">For Individuals</span>
 
 If you're looking for a reliable way to monitor your **income** and **expenses**, this tool provides:
 
@@ -19,7 +19,7 @@ These features help you understand your money flow, detect inconsistencies, and 
 
 ---
 
-## <span style="color:#9C8A25;">For Investors</span>
+## <span style="color:#FFF;">For Investors</span>
 
 If you want a consolidated view of your **assets**, the application enables you to:
 
@@ -28,7 +28,7 @@ If you want a consolidated view of your **assets**, the application enables you 
 
 ---
 
-## <span style="color:#9C8A25;">Shared Features</span>
+## <span style="color:#FFF;">Shared Features</span>
 
 Both individuals and investors benefit from:
 
@@ -37,7 +37,7 @@ Both individuals and investors benefit from:
 
 ---
 
-## <span style="color:#9C8A25;">How to Use It</span>
+## <span style="color:#FFF;">How to Use It</span>
 
 1. Export your bank and brokerage account data and format it as required  
 2. Place the data files in the designated repository  
@@ -45,7 +45,7 @@ Both individuals and investors benefit from:
 
 ---
 
-## <span style="color:#9C8A25;">Data Formatting — Opereations</span>
+## <span style="color:#FFF;">Data Formatting — Opereations</span>
 
 Export your bank data as a CSV file with the following structure:
 
@@ -72,7 +72,7 @@ Export your bank data as a CSV file with the following structure:
 
 ---
 
-## <span style="color:#9C8A25;">Operations Data Sample</span>
+## <span style="color:#FFF;">Operations Data Sample</span>
 
 ```CSV
 date;catégorie;sous-catégorie;libellé;débit;crédit;solde
@@ -81,7 +81,7 @@ date;catégorie;sous-catégorie;libellé;débit;crédit;solde
 29/01/2026;Revenu;Salaire;MySocietyName;;1222.22;
 ```
 ---
-## <span style="color:#9C8A25;">Data Formatting — Assets </span>
+## <span style="color:#FFF;">Data Formatting — Assets </span>
 
 Export your brokerage data as:
 
@@ -100,9 +100,15 @@ Export your brokerage data as:
 
 ---
 
-## <span style="color:#9C8A25;">Assets Data Sample</span>
+## <span style="color:#FFF;">Assets Data Sample</span>
 
 ```CSV
 date;categorie;sous-categorie;description;emplacement;valeur;investissement
 31/01/2023;Actions & Fonds;Brkrge acc. 1;Description;Bank Asset Mangmnt;999.99;888.88
 ```
+
+---
+
+## <span style="color:#FFF;">Data life cycle</span>
+
+<img src="img/datalifecycle.png" alt="image info" width="100%"/>
